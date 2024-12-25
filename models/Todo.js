@@ -1,34 +1,35 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 
-const todoSchema =new mongoose.Schema(
+// Define the schema for the "Todo" model
+const todoSchema = new mongoose.Schema(
     {
-        title:{
-          type:String,
-          required:true,
-          maxLength:50,
+        // Title of the todo item, required and must not exceed 50 characters
+        title: {
+            type: String,
+            required: true,
+            maxLength: 50,
         },
-
-        description :{
-            type:String,
-            required:true,
-            maxLength:50,
+        // Description of the todo item, required and must not exceed 50 characters
+        description: {
+            type: String,
+            required: true,
+            maxLength: 50,
         },
-
-        createdAt:{
-            type:Date,
-            required:true,
-            default:Date.now(),
+        // Date when the todo item was created, defaults to the current date and time
+        createdAt: {
+            type: Date,
+            required: true,
+            default: Date.now, // Use Date.now to set the default as the current timestamp
         },
-        updatedAt:{
-            type:Date,
-            required:true,
-            default:Date.now(),
-        }
+        // Date when the todo item was last updated, defaults to the current date and time
+        updatedAt: {
+            type: Date,
+            required: true,
+            default: Date.now, // Use Date.now to set the default as the current timestamp
+        },
     }
 );
 
-//it means the schema would me exported using modules.export
-//and can be used by others with the name Todo
-//model would be used by the controller
-//40:00 mins left
-module.exports = mongoose.exports("Todo",todoSchema);
+// Export the schema as a model named "Todo"
+// This allows other parts of the application to use this model
+module.exports = mongoose.model("Todo", todoSchema);

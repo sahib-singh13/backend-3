@@ -1,4 +1,6 @@
 //import the schema
+//controllers defines the logic what happens with the data entered
+
 const Todo=require("../models/Todo");
 //this fetches the schema which is stored
 //the Todo.js to that we can insert the data
