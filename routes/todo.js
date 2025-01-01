@@ -13,11 +13,14 @@ const router=express.Router();
 
 //import controller
 const {createTodo}=require("../controllers/createTodo");
+const {getTodo}=require("../controllers/getTodo");
 
 //define API routes
 //currently we are only creating a route
 //for the createTodo path so we mention that
 
+//mapping with controller
 router.post("/createTodo",createTodo);
+router.get("/getTodo",getTodo);
 
 module.exports=router;
