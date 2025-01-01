@@ -14,6 +14,7 @@ const router=express.Router();
 //import controller
 const {createTodo}=require("../controllers/createTodo");
 const {getTodo,getTodoById}=require("../controllers/getTodo");
+const {updateTodo}=require("../controllers/updateTodo");
 
 //define API routes
 //currently we are only creating a route
@@ -22,6 +23,7 @@ const {getTodo,getTodoById}=require("../controllers/getTodo");
 //mapping with controller
 router.post("/createTodo",createTodo);
 router.get("/getTodos",getTodo);
-router.get("/getTodos/:id",getTodoById);
+router.get("/getTodos/:id",getTodoById); 
+router.put("/updateTodo/:id",updateTodo);
 
 module.exports=router;  
