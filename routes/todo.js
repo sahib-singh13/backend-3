@@ -21,6 +21,6 @@ const {getTodo}=require("../controllers/getTodo");
 
 //mapping with controller
 router.post("/createTodo",createTodo);
-router.get("/getTodo",getTodo);
+router.get("/getTodos",getTodo);
 
 module.exports=router;
